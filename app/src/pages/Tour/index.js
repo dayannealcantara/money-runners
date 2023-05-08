@@ -4,7 +4,7 @@ import { Box } from '../../components';
 
 const Tour = () => {
   return (
-    <Box >
+    <Box background="primary">
       <Text>Tela de Tour</Text>     
     </Box>
   );
