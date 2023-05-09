@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-import { Title as TitlePaper, Text as TextPaper, Button as ButtonPaper } from "react-native-paper";
+import { Title as TitlePaper, Text as TextPaper, Button as ButtonPaper, TextInput as TextInputPaper } from "react-native-paper";
 
  export const Box = styled.View`
     flex:1;
@@ -76,4 +76,23 @@ export const Button = styled(ButtonPaper).attrs((props) => ({
     },
     mode: 'contained',
   }))``;
+  
+export const TextInput = styled(TextInputPaper).attrs(({ theme }) => ({
+    mode: 'outlined',
+    outlineColor: theme.muted,
+    underlineColor: theme.muted,
+    selectionColor: theme.muted,
+    theme: {
+      colors: {
+        text: theme.light,
+        primary: theme.light,
+        background: theme.dark,
+        placeholder: theme.muted,
+      },
+    },
+  }))`
+    height: 45px;
+    width: 100%;
+    font-size: 15px;
+  `;
   
