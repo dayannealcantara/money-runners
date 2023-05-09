@@ -48,6 +48,8 @@ export const Cover = styled.ImageBackground.attrs((props) => ({
 }))`
     width: ${(props) => props.width || '100px'};
     height: ${(props) => props.height || '100px'};
+    max-height: ${(props) => props.height || '100px'};
+    min-height: ${(props) => props.height || '100px'};
     margin: ${(props) => props.spacing || '0px'};
 ` 
 export const Text = styled(TextPaper)`
