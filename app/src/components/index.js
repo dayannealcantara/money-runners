@@ -72,7 +72,7 @@ export const Button = styled(ButtonPaper).attrs((props) => ({
     labelStyle: {
       color: props.theme[props.textColor || 'light'],
       letterSpacing: 0,
-      fontFamily: 'Ubuntu_400Regular',
+      fontFamily: 'Ubuntu_300Light',
     },
     mode: 'contained',
   }))``;
