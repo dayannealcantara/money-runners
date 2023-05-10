@@ -1,6 +1,12 @@
 import styled from "styled-components/native";
 
+
+import { ScrollView as ScrollViewComponent } from 'react-native-gesture-handler';
+import { LinearGradient } from 'expo-linear-gradient';
+import { ProgressCircle as ProgressCircleSVG } from 'react-native-svg-charts';
+
 import { Title as TitlePaper, Text as TextPaper, Button as ButtonPaper, TextInput as TextInputPaper } from "react-native-paper";
+
 
  export const Box = styled.View`
     flex:1;
@@ -51,6 +57,8 @@ export const Cover = styled.ImageBackground.attrs((props) => ({
     max-height: ${(props) => props.height || '100px'};
     min-height: ${(props) => props.height || '100px'};
     margin: ${(props) => props.spacing || '0px'};
+    border-radius: ${(props) => (props.circle ? props.width : '3px')};
+    overflow:hidden;
 ` 
 export const Text = styled(TextPaper)`
   color: ${(props) => props.theme[props.color || 'muted']};
@@ -95,4 +103,25 @@ export const TextInput = styled(TextInputPaper).attrs(({ theme }) => ({
     width: 100%;
     font-size: 15px;
   `;
-  
+
+export const ScrollView = styled(ScrollViewComponent)`
+  width: 100%;
+  background: ${(props) =>
+    props.theme[props.background] || props.background || 'transparent'};
+`;
+
+export const GradientView = styled(LinearGradient)`
+  flex: 1;
+  padding: ${(props) => (props.hasPadding ? '20px' : '0px')};
+  justify-content: ${(props) => props.justify || 'flex-start'};
+  align-items: ${(props) => props.align || 'flex-start'}
+`;
+
+export const ProgressCircle = styled(ProgressCircleSVG).attrs((props) => ({
+  progressColor: props.theme[props.color] || props.theme.secondary,
+ 
+}))`
+  width: ${(props) => props.size || '120px'};
+  height: ${(props) => props.size || '120px'};
+  position: absolute;
+`;
