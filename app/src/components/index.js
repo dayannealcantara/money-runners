@@ -1,11 +1,13 @@
 import styled from "styled-components/native";
 
+import util from '../util';
 
 import { ScrollView as ScrollViewComponent } from 'react-native-gesture-handler';
 import { LinearGradient } from 'expo-linear-gradient';
 import { ProgressCircle as ProgressCircleSVG } from 'react-native-svg-charts';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { Title as TitlePaper, Text as TextPaper, Button as ButtonPaper, TextInput as TextInputPaper,   ActivityIndicator as ActivityIndicatorPaper } from "react-native-paper";
+
+import { Title as TitlePaper, Text as TextPaper, Button as ButtonPaper, TextInput as TextInputPaper,   ActivityIndicator as ActivityIndicatorPaper, Badge as BadgePaper} from "react-native-paper";
 
 
  export const Box = styled.View`
@@ -146,3 +148,19 @@ export const ActivityIndicator = styled(ActivityIndicatorPaper).attrs(
     color: props.theme[props.color],
   })
 )``;
+
+export const Badge = styled(BadgePaper)`
+
+  width: auto;
+  height: auto;
+  font-size: ${(props) => (props.big ? '20px' : '16px')};
+  padding: ${(props) => (props.big ? '12px 15px' : '5px 10px')};
+  line-height: 25px;
+  margin: ${(props) => props.spacing || '0px'};
+  align-self: ${(props) => props.align || 'flex-start'};
+  border-radius: 100px;
+  color: ${(props) => props.theme[props.color || 'danger']};
+  background: ${(props) =>
+    util.toAlpha(props.theme[props.color || 'danger'], 20)};
+ 
+`;

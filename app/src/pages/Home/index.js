@@ -1,7 +1,9 @@
 import React from "react";
-import { ActivityIndicator, Box, Button, Cover, GradientView, ProgressCircle, ScrollView, Spacer,Text,Title, Touchable } from "../../components";
-import YoutubePlayer from 'react-native-youtube-iframe';
+import { ActivityIndicator, Badge, Box, Button, Cover, GradientView, ProgressCircle, ScrollView, Spacer,Text,Title, Touchable } from "../../components";
+// import YoutubePlayer from 'react-native-youtube-iframe';
+import { FlatList } from 'react-native-gesture-handler';
 import { colors } from '../../assets/theme.json';
+import { View } from 'react-native';
 
 
 const Home = () => {
@@ -77,12 +79,61 @@ const Home = () => {
       />     
     </Box> 
     </> */}
-      </Box>
-   
-    </ScrollView>
-   
-    
-
+     {/* <Box background="dark50" hasPadding radius="3px" >
+     <Text>Quarta feira 19/04/2023</Text>
+     <Spacer/>
+      <Title color="light" small>Resultados de hoje.</Title>   
+      <Spacer/>     
+      <FlatList
+      data={[1,2,3,4,5,6,7,8,9]}
+      ListEmptyComponent={()=>(
+        <Box align="center" spacing="20px 0 0">
+          <Title color="light" small>Nenhum resultado...</Title>
+          <Spacer />
+          <Text align="center"color="light" >O seu desafio começa em <Text color="danger">algumas horas...</Text></Text>
+          <Spacer size="20px"/>
+          <Button block>Recarregar</Button>
+        </Box>
+      )}
+      renderItem={({item})=>(
+        <View style={{ height: 50 }}>
+        <Box  
+          row
+          width="85%"
+          align="center"  
+          justify="space-between"               
+         >
+        <Box row align="center" >
+          <Cover
+            mode="cover"
+            width="35px"
+            height="35px"
+            circle
+            spacing="0 7px 0 0"
+            source={{uri:"https://i.pinimg.com/236x/aa/b4/12/aab41233a7bdd8b03fed7daa318be243.jpg"}}
+            />
+            <Text color="light">Dayanne</Text>          
+          </Box>
+            <Badge
+            color="success"
+            spacing="5px 0 0"
+          >       
+          + R$50,00
+          </Badge>        
+          </Box>
+        </View>
+      )}
+      />      
+    </Box>  */}
+     <Box background="dark50" hasPadding radius="3px" align="center">
+      <Title color="light" small>Nenhum desafio encontrado</Title>
+      <Spacer/>
+      <Text>No momento não há desafios para fazer...</Text>
+      <Spacer size="20px"/>
+      <Button block background="success">Recarregar</Button>
+    </Box> 
+   </Box>   
+  </ScrollView>
   );
 };
 
