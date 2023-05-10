@@ -1,5 +1,6 @@
 import React from "react";
 import { ActivityIndicator, Box, Button, Cover, GradientView, ProgressCircle, ScrollView, Spacer,Text,Title, Touchable } from "../../components";
+import YoutubePlayer from 'react-native-youtube-iframe';
 import { colors } from '../../assets/theme.json';
 
 
@@ -48,13 +49,34 @@ const Home = () => {
       <Spacer/>
       <Text>Aguarde alguns instantes...</Text>
     </Box>  */}
-     <Box background="dark50" hasPadding radius="3px" align="center">
+     {/* <Box background="dark50" hasPadding radius="3px" align="center">
       <Title color="light" small>Nenhum desafio encontrado</Title>
       <Spacer/>
       <Text>No momento não há desafios para fazer...</Text>
       <Spacer size="20px"/>
       <Button block background="success">Recarregar</Button>
+    </Box>  */}
+    {/* <>
+     <Box background="dark50" hasPadding radius="3px" >
+      <Title color="light" small>Correr 2km todos os dias às 5am durante 30 dias</Title>
+      <Spacer/>
+      <Text>Mantenha a constância correndo todos os dias para criar um novo hábito.</Text>
+      <Spacer size="30px"/>
+      <Text>O Desafio termina em 30/07/2023</Text>
+      <Spacer size="20px"/>
+      <Button block>Participar Agora</Button>
     </Box> 
+    <Spacer size="30px"/>
+     <Box background="dark50" hasPadding radius="3px" align="center">
+      <Title color="light" small>Eae?! Vai encarar o desafio?</Title>
+      <Spacer/>
+      <YoutubePlayer
+        height={180}
+        width="100%"
+        videoId="kChLOhc-nhs"
+      />     
+    </Box> 
+    </> */}
       </Box>
    
     </ScrollView>
