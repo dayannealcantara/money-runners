@@ -40,13 +40,20 @@ const Home = () => {
         <Spacer size="30px"/>       
       </GradientView>  
       <Box hasPadding spacing="-50px 0 0">
-      <Box background="dark50" hasPadding radius="3px" align="center">
+      {/* <Box background="dark50" hasPadding radius="3px" align="center">
         <Spacer size="20px"/>
         <ActivityIndicator size="large"/>
         <Spacer size="20px"/>
       <Title color="light" small>Buscando Informações</Title>
       <Spacer/>
       <Text>Aguarde alguns instantes...</Text>
+    </Box>  */}
+     <Box background="dark50" hasPadding radius="3px" align="center">
+      <Title color="light" small>Nenhum desafio encontrado</Title>
+      <Spacer/>
+      <Text>No momento não há desafios para fazer...</Text>
+      <Spacer size="20px"/>
+      <Button block background="success">Recarregar</Button>
     </Box> 
       </Box>
    
