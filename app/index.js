@@ -16,6 +16,8 @@ import {
  } from '@expo-google-fonts/ubuntu';
 
 import Tour from './src/pages/Tour';
+import Login from './src/pages/Login';
+import Home from './src/pages/Home';
 
 const App = () => {
 
@@ -37,8 +39,10 @@ const App = () => {
   return (
     <ThemeProvider theme={colors}>
       <PaperProvider>
-        <Tour/>
-      </PaperProvider>
+        {/* <Tour/> */}
+        {/* <Login/> */}
+        <Home/>
+        </PaperProvider>
     </ThemeProvider>
   )
 }
