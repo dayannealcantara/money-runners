@@ -4,8 +4,8 @@ import styled from "styled-components/native";
 import { ScrollView as ScrollViewComponent } from 'react-native-gesture-handler';
 import { LinearGradient } from 'expo-linear-gradient';
 import { ProgressCircle as ProgressCircleSVG } from 'react-native-svg-charts';
-
-import { Title as TitlePaper, Text as TextPaper, Button as ButtonPaper, TextInput as TextInputPaper } from "react-native-paper";
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Title as TitlePaper, Text as TextPaper, Button as ButtonPaper, TextInput as TextInputPaper,   ActivityIndicator as ActivityIndicatorPaper } from "react-native-paper";
 
 
  export const Box = styled.View`
@@ -125,3 +125,24 @@ export const ProgressCircle = styled(ProgressCircleSVG).attrs((props) => ({
   height: ${(props) => props.size || '120px'};
   position: absolute;
 `;
+
+export const Touchable = styled(TouchableOpacity)`
+  flex-direction: ${(props) => props.direction || 'row'};
+  justify-content: ${(props) => props.justify || 'flex-start'};
+  align-items: ${(props) => props.align || 'flex-start'};
+  width: ${(props) => props.width || '100%'};
+  height: ${(props) => props.height || 'auto'};
+  padding: ${(props) => (props.hasPadding ? '20px' : '0px')};
+  margin: ${(props) => props.spacing || 0};
+  background: ${(props) =>
+    props.theme[props.background] || props.background || 'transparent'};
+  border-radius: ${(props) => props.rounded || 0};
+  border: ${(props) => props.border || 'none'};
+`;
+
+export const ActivityIndicator = styled(ActivityIndicatorPaper).attrs(
+  (props) => ({
+    animating: true,
+    color: props.theme[props.color],
+  })
+)``;
