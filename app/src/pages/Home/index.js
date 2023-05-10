@@ -125,12 +125,18 @@ const Home = () => {
       )}
       />      
     </Box>  */}
-     <Box background="dark50" hasPadding radius="3px" align="center">
-      <Title color="light" small>Nenhum desafio encontrado</Title>
+     <Box background="dark50" hasPadding radius="3px" align="center">    
+        <Badge align="center" color="success" spacing="5px 0 0" big>       
+         + R$50,00
+        </Badge>
+        <Spacer size="20px"/>    
+     <Text>Quarta-feira, 19/04/223</Text>
       <Spacer/>
-      <Text>No momento não há desafios para fazer...</Text>
-      <Spacer size="20px"/>
-      <Button block background="success">Recarregar</Button>
+     <Title color="light" small>Inicie seu compromisso</Title>
+     <Spacer size="30px"/>    
+     <Title big color="danger" scale={1.5}>25:00</Title>
+     <Spacer size="30px"/>  
+     <Button block>Iniciar agora</Button>
     </Box> 
    </Box>   
   </ScrollView>
