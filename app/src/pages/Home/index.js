@@ -21,6 +21,7 @@ const Home = () => {
         <Cover
               width="110px"
               height="110px"
+              mode="cover"
               circle
               source={{uri:"https://i.pinimg.com/236x/aa/b4/12/aab41233a7bdd8b03fed7daa318be243.jpg"}}
               // image={`${util.AWS.bucketURL}/user/${user?._id}.jpeg`}

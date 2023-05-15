@@ -15,14 +15,12 @@ import {
   Ubuntu_700Bold_Italic
  } from '@expo-google-fonts/ubuntu';
 
-import Tour from './src/pages/Tour';
-import Login from './src/pages/Login';
-import Home from './src/pages/Home';
+import Routes from './src/routes';
 
 const App = () => {
 
   let [fontsLoaded] =useFonts({
-    Ubuntu_300Light,
+  Ubuntu_300Light,
   Ubuntu_300Light_Italic,
   Ubuntu_400Regular,
   Ubuntu_400Regular_Italic,
@@ -39,10 +37,8 @@ const App = () => {
   return (
     <ThemeProvider theme={colors}>
       <PaperProvider>
-        {/* <Tour/> */}
-        {/* <Login/> */}
-        <Home/>
-        </PaperProvider>
+        <Routes/>     
+      </PaperProvider>
     </ThemeProvider>
   )
 }
