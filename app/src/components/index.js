@@ -121,6 +121,8 @@ export const GradientView = styled(LinearGradient)`
 
 export const ProgressCircle = styled(ProgressCircleSVG).attrs((props) => ({
   progressColor: props.theme[props.color] || props.theme.secondary,
+  backgroundColor: props.background || util.toAlpha(props.theme.primary, 20),
+
  
 }))`
   width: ${(props) => props.size || '120px'};
