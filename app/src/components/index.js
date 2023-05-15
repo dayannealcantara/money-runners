@@ -7,7 +7,14 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { ProgressCircle as ProgressCircleSVG } from 'react-native-svg-charts';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-import { Title as TitlePaper, Text as TextPaper, Button as ButtonPaper, TextInput as TextInputPaper,   ActivityIndicator as ActivityIndicatorPaper, Badge as BadgePaper} from "react-native-paper";
+import { 
+  Title as TitlePaper, 
+  Text as TextPaper, 
+  Button as ButtonPaper, 
+  TextInput as TextInputPaper,  
+  ActivityIndicator as ActivityIndicatorPaper, 
+  Badge as BadgePaper,  
+  ProgressBar as ProgressBarPaper} from "react-native-paper";
 
 
  export const Box = styled.View`
@@ -128,6 +135,14 @@ export const ProgressCircle = styled(ProgressCircleSVG).attrs((props) => ({
   width: ${(props) => props.size || '120px'};
   height: ${(props) => props.size || '120px'};
   position: absolute;
+`;
+export const ProgressBar = styled(ProgressBarPaper).attrs((props) => ({
+  color: props.theme[props.color] || props.theme.info,
+}))`
+  width: ${(props) => props.width || '100px'};
+  height: 10px;
+  border-radius: 20px;
+  background: ${(props) => util.toAlpha(props.theme.light, 20)};
 `;
 
 export const Touchable = styled(TouchableOpacity)`
