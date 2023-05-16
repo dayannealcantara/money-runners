@@ -6,6 +6,10 @@ import tour01 from '../../assets/illustration-1.png'
 import tour02 from '../../assets/illustration-2.png'
 import tour03 from '../../assets/illustration-3.png'
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {replace} from '../../services/navigation'
+
+
 const Tour = () => {
   const tourData = [
     {
@@ -32,6 +36,11 @@ const Tour = () => {
   ];
 
   const [actualTour, setActualTour] = useState(0)
+
+  const goToLogin = async () => {
+    await AsyncStorage.setItem('@tour', 'Y')
+    replace('Login')
+  }
   
   return (
     <Box background={tourData[actualTour]?.bg} hasPadding justify="center">
@@ -42,7 +51,14 @@ const Tour = () => {
       <Spacer size="50px"/> 
       <Text align="center" small hasPadding>{tourData[actualTour]?.desc}</Text>
       <Spacer size="50px"/> 
-      <Button block background={tourData[actualTour]?.button} onPress={()=> setActualTour(actualTour + 1)}>{actualTour === 2 ? 'Explorar' : 'Próximo'}</Button>
+      <Button block background={tourData[actualTour]?.button} 
+      onPress={()=> {
+        if(actualTour === 2) {
+          goToLogin()
+        } else {
+          setActualTour(actualTour + 1)
+        }
+      }}>{actualTour === 2 ? 'Explorar' : 'Próximo'}</Button>
     
     </Box>
   );
