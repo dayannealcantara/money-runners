@@ -16,6 +16,7 @@ import Ranking from './pages/Ranking';
 import Payment from './pages/Payment';
 import Timer from './pages/Timer';
 import Balance from './pages/Balance';
+import { navigationRef } from './services/navigation';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -74,11 +75,11 @@ export default function Routes() {
       <StatusBar backgroundColor={colors.dark} />
       <NavigationContainer
         // options={{ animationEnabled: true }}
-        // ref={navigationRef}
+        ref={navigationRef}
       >
         <Stack.Navigator
           options={{ animationEnabled: true }}
-          initialRouteName="Home"
+          initialRouteName="Tour"
         >
           <Stack.Screen
             options={{ headerShown: false }}

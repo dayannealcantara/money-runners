@@ -2,6 +2,7 @@ import { registerRootComponent } from 'expo';
 import { ThemeProvider } from 'styled-components/native';
 import { Provider as PaperProvider } from 'react-native-paper';
 import {colors} from './src/assets/theme.json'
+import { Provider as StoreProvider} from 'react-redux';
 
 import {
   useFonts,
@@ -16,9 +17,9 @@ import {
  } from '@expo-google-fonts/ubuntu';
 
 import Routes from './src/routes';
+import store from './src/store';
 
 const App = () => {
-
   let [fontsLoaded] =useFonts({
   Ubuntu_300Light,
   Ubuntu_300Light_Italic,
@@ -35,11 +36,13 @@ const App = () => {
   }
   
   return (
-    <ThemeProvider theme={colors}>
-      <PaperProvider>
-        <Routes/>     
-      </PaperProvider>
-    </ThemeProvider>
+    <StoreProvider store={store}>
+      <ThemeProvider theme={colors}>
+        <PaperProvider>
+          <Routes/>     
+        </PaperProvider>
+      </ThemeProvider>
+    </StoreProvider>   
   )
 }
 
