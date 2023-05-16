@@ -3,14 +3,34 @@ import produce from 'immer';
 
 const INITIAL_STATE = {
   user:{},
-
+  userForm: {},
+  form: {
+    disabled: false,
+    loading: false,
+    saving: false
+  }
 };
 
-function salao(state = INITIAL_STATE, action) {
-  switch (action.type) {   
+function app(state = INITIAL_STATE, action) {
+  switch (action.type) {
+    case types.SET_REDUCER: {
+      return produce(state, (draft) => {
+        draft[action.key] = action.payload;
+      });
+    }
     case types.SET_USER: {
       return produce(state, (draft) => {
         draft.userForm = { ...state.userForm, ...action.payload };
+      });
+    }   
+    case types.SET_FORM: {
+      return produce(state, (draft) => {
+        draft.form = { ...state.form, ...action.payload };
+      });
+    }
+    case types.RESET: {
+      return produce(state, (draft) => {
+        draft[action.key] = INITIAL_STATE[action.key];
       });
     }
     default:
@@ -18,4 +38,4 @@ function salao(state = INITIAL_STATE, action) {
   }
 }
 
-export default salao;
+export default app;
